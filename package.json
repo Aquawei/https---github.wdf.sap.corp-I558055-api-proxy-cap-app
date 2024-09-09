@@ -1,0 +1,39 @@
+{
+  "name": "api-proxy-cap-app-ax",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "type": "module",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap-cloud-sdk/http-client": "^3.20.0",
+    "@sap/cds": "^8",
+    "@sap/xssec": "^4",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.6",
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^8"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "auth": "xsuaa",
+      "destinations": true,
+      "[production]": {
+        "auth": "xsuaa"
+      },
+      "AICoreLLMDestination": {
+        "kind": "odata-v4",
+        "credentials": {
+          "destination": "openai-aicore-api",
+          "path": "/v2/inference/deployments/d586c575e2be0756"
+        }
+      }
+    }
+  }
+}

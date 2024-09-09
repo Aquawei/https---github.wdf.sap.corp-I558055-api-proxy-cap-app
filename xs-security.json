@@ -1,0 +1,7 @@
+{
+  "xsappname": "api-proxy-cap-app-ax-${org}-${space}", 
+  "tenant-mode": "dedicated",
+  "scopes": [],
+  "attributes": [],
+  "role-templates": []
+}
